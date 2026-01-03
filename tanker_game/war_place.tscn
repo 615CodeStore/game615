@@ -1,0 +1,114 @@
+[gd_scene load_steps=13 format=3 uid="uid://cev7mm0yaio2"]
+
+[ext_resource type="Texture2D" uid="uid://dhrg68epxk0m7" path="res://asset/war_place/war_place1.png" id="1_arcu4"]
+[ext_resource type="PackedScene" uid="uid://w3tnd3x1r1wa" path="res://tanker_game/tanker.tscn" id="2_s5d85"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_arcu4"]
+size = Vector2(112.176, 831)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s5d85"]
+size = Vector2(1801.82, 58.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vjrlp"]
+size = Vector2(93.1456, 762)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ijqab"]
+size = Vector2(1717.68, 77)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ii4mp"]
+size = Vector2(295.203, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ura2s"]
+size = Vector2(8.75595, 480.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_egohq"]
+size = Vector2(840.313, 7)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w21e4"]
+size = Vector2(8.99841, 217)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ubufm"]
+size = Vector2(393.357, 9)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_erb5v"]
+size = Vector2(8.27087, 230)
+
+[node name="WarPlace" type="Node2D"]
+
+[node name="WarPlace1" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+scale = Vector2(0.998438, 1)
+texture = ExtResource("1_arcu4")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="WarPlace1"]
+position = Vector2(-17.5274, -1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WarPlace1/StaticBody2D"]
+position = Vector2(-890.892, -127.5)
+shape = SubResource("RectangleShape2D_arcu4")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="WarPlace1"]
+position = Vector2(-17.5274, -1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WarPlace1/StaticBody2D2"]
+position = Vector2(66.1035, -510.75)
+shape = SubResource("RectangleShape2D_s5d85")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="WarPlace1"]
+position = Vector2(-17.5274, -1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WarPlace1/StaticBody2D3"]
+position = Vector2(929.452, -100)
+shape = SubResource("RectangleShape2D_vjrlp")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="WarPlace1"]
+position = Vector2(-17.5274, -1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WarPlace1/StaticBody2D4"]
+position = Vector2(24.0377, 246)
+shape = SubResource("RectangleShape2D_ijqab")
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="WarPlace1"]
+position = Vector2(-17.5274, -1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WarPlace1/StaticBody2D5"]
+position = Vector2(-686.944, -23)
+shape = SubResource("RectangleShape2D_ii4mp")
+
+[node name="StaticBody2D6" type="StaticBody2D" parent="WarPlace1"]
+position = Vector2(-17.5274, -1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WarPlace1/StaticBody2D6"]
+position = Vector2(-252.265, -33.25)
+shape = SubResource("RectangleShape2D_ura2s")
+
+[node name="StaticBody2D7" type="StaticBody2D" parent="WarPlace1"]
+position = Vector2(-17.5274, -1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WarPlace1/StaticBody2D7"]
+position = Vector2(461.721, -197.5)
+shape = SubResource("RectangleShape2D_egohq")
+
+[node name="StaticBody2D8" type="StaticBody2D" parent="WarPlace1"]
+position = Vector2(-17.5274, -1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WarPlace1/StaticBody2D8"]
+position = Vector2(286.455, 98.5)
+shape = SubResource("RectangleShape2D_w21e4")
+
+[node name="StaticBody2D9" type="StaticBody2D" parent="WarPlace1"]
+position = Vector2(-17.5274, -1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WarPlace1/StaticBody2D9"]
+position = Vector2(686.202, -1.5)
+shape = SubResource("RectangleShape2D_ubufm")
+
+[node name="StaticBody2D10" type="StaticBody2D" parent="WarPlace1"]
+position = Vector2(-17.5274, -1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WarPlace1/StaticBody2D10"]
+position = Vector2(-542.477, -366)
+shape = SubResource("RectangleShape2D_erb5v")
+
+[node name="tanker" parent="WarPlace1" instance=ExtResource("2_s5d85")]
+scale = Vector2(0.5, 0.5)
