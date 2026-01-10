@@ -12,13 +12,17 @@ config_version=5
 
 config/name="game615"
 run/main_scene="uid://cev7mm0yaio2"
-config/features=PackedStringArray("4.4", "Forward Plus")
+config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
 [display]
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
+
+[dotnet]
+
+project/assembly_name="game615"
 
 [input]
 

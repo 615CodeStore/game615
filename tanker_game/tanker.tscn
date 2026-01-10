@@ -1,8 +1,20 @@
-[gd_scene load_steps=6 format=3 uid="uid://w3tnd3x1r1wa"]
+[gd_scene load_steps=19 format=3 uid="uid://w3tnd3x1r1wa"]
 
 [ext_resource type="Texture2D" uid="uid://cheirkvjvuvsv" path="res://asset/tanker/blue_tanker.png" id="1_b6d76"]
 [ext_resource type="Texture2D" uid="uid://djgvt2uuxrf5m" path="res://asset/tanker/blue_tanker2.png" id="2_1l3b3"]
+[ext_resource type="Texture2D" uid="uid://bxhdbtof8qrie" path="res://asset/tanker/ching_tanker.png" id="4_1l3b3"]
+[ext_resource type="Texture2D" uid="uid://b8u7rltm5nwgl" path="res://asset/tanker/ching_tanker2.png" id="5_irdtq"]
+[ext_resource type="Texture2D" uid="uid://cmsa3pe8eitg4" path="res://asset/tanker/green_tanker.png" id="6_5xo0h"]
+[ext_resource type="Texture2D" uid="uid://dn3mgktfekaw8" path="res://asset/tanker/green_tanker2.png" id="7_uxr3v"]
+[ext_resource type="Texture2D" uid="uid://dembe5qnsheqs" path="res://asset/tanker/orange_tanker.png" id="8_5vwve"]
+[ext_resource type="Texture2D" uid="uid://dd4mmgh23ah0p" path="res://asset/tanker/orange_tanker2.png" id="9_lighj"]
+[ext_resource type="Texture2D" uid="uid://bxvaxmvwoo1y6" path="res://asset/tanker/purple_tanker.png" id="10_51omw"]
+[ext_resource type="Texture2D" uid="uid://brtyigf2o4q1p" path="res://asset/tanker/purple_tanker2.png" id="11_wapvg"]
+[ext_resource type="Texture2D" uid="uid://ttefuqt5j3sv" path="res://asset/tanker/red_tanker.png" id="12_v6qnu"]
+[ext_resource type="Texture2D" uid="uid://dhaci31rkk2s6" path="res://asset/tanker/red_tanker2.png" id="13_cymuh"]
+[ext_resource type="Texture2D" uid="uid://ghfjiqvvyj7d" path="res://asset/tanker/yellow_tanker.png" id="14_d08wi"]
 [ext_resource type="Script" uid="uid://c6m48oltw7twi" path="res://tanker_game/script/tanker_body.gd" id="15_1l3b3"]
+[ext_resource type="Texture2D" uid="uid://dnqsel5qe7qxa" path="res://asset/tanker/yellow_tanker2.png" id="15_dffjr"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kmsrb"]
 animations = [{
@@ -14,22 +26,154 @@ animations = [{
 "texture": ExtResource("2_1l3b3")
 }],
 "loop": true,
-"name": &"blue",
+"name": &"blue_move",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_b6d76")
+}],
+"loop": true,
+"name": &"blue_stay",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_1l3b3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_irdtq")
+}],
+"loop": true,
+"name": &"ching_move",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_irdtq")
+}],
+"loop": true,
+"name": &"ching_stay",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_5xo0h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_uxr3v")
+}],
+"loop": true,
+"name": &"green_move",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_uxr3v")
+}],
+"loop": true,
+"name": &"green_stay",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_5vwve")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_lighj")
+}],
+"loop": true,
+"name": &"orange_move",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_lighj")
+}],
+"loop": true,
+"name": &"orange_stay",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_51omw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_wapvg")
+}],
+"loop": true,
+"name": &"purple_move",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_wapvg")
+}],
+"loop": true,
+"name": &"purple_stay",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_v6qnu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_cymuh")
+}],
+"loop": true,
+"name": &"red_move",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_cymuh")
+}],
+"loop": true,
+"name": &"red_stay",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_d08wi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_dffjr")
+}],
+"loop": true,
+"name": &"yellow_move",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_dffjr")
+}],
+"loop": true,
+"name": &"yellow_stay",
 "speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ogp8u"]
 size = Vector2(154.5, 156.5)
 
-[node name="tanker" type="CharacterBody2D"]
-script = ExtResource("15_1l3b3")
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_kmsrb"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = true
+properties/0/replication_mode = 1
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="tanker" type="CharacterBody2D" node_paths=PackedStringArray("annimator")]
+scale = Vector2(0.46471664, 0.46471664)
+script = ExtResource("15_1l3b3")
+annimator = NodePath("Graphics/AnimatedSprite2D")
+
+[node name="Graphics" type="Node2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Graphics"]
 sprite_frames = SubResource("SpriteFrames_kmsrb")
-animation = &"blue"
-frame = 1
-frame_progress = 0.982508
+animation = &"yellow_move"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1.25, 16.75)
 shape = SubResource("RectangleShape2D_ogp8u")
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_kmsrb")

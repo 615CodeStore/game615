@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=3 uid="uid://cev7mm0yaio2"]
 
 [ext_resource type="Texture2D" uid="uid://dhrg68epxk0m7" path="res://asset/war_place/war_place1.png" id="1_arcu4"]
-[ext_resource type="PackedScene" uid="uid://w3tnd3x1r1wa" path="res://tanker_game/tanker.tscn" id="2_s5d85"]
+[ext_resource type="Script" uid="uid://ddd7p3c7d6g0k" path="res://tanker_game/script/war_place.gd" id="1_s5d85"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_arcu4"]
 size = Vector2(112.176, 831)
@@ -34,6 +34,7 @@ size = Vector2(393.357, 9)
 size = Vector2(8.27087, 230)
 
 [node name="WarPlace" type="Node2D"]
+script = ExtResource("1_s5d85")
 
 [node name="WarPlace1" type="Sprite2D" parent="."]
 position = Vector2(960, 540)
@@ -110,5 +111,29 @@ position = Vector2(-17.5274, -1)
 position = Vector2(-542.477, -366)
 shape = SubResource("RectangleShape2D_erb5v")
 
-[node name="tanker" parent="WarPlace1" instance=ExtResource("2_s5d85")]
-scale = Vector2(0.5, 0.5)
+[node name="Players" type="Node2D" parent="."]
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="creat" type="Button" parent="UI"]
+offset_left = 39.000015
+offset_top = 853.0
+offset_right = 111.000015
+offset_bottom = 884.0
+scale = Vector2(3.2663498, 3.1069195)
+text = "创建游戏"
+
+[node name="join" type="Button" parent="UI"]
+offset_left = 311.0
+offset_top = 853.0
+offset_right = 383.0
+offset_bottom = 884.0
+scale = Vector2(3.2663498, 3.1069195)
+text = "加入游戏"
+
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
+_spawnable_scenes = PackedStringArray("uid://w3tnd3x1r1wa")
+spawn_path = NodePath("../Players")
+
+[connection signal="button_down" from="UI/creat" to="." method="_on_creat_button_down"]
+[connection signal="button_down" from="UI/join" to="." method="_on_join_button_down"]
